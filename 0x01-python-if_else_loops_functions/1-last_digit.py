@@ -10,16 +10,15 @@ else:
 
 if number > 0:
     if last > 5:
-        print(f"Last digit of {number} is {last} and is greater than 5")
+        print("Last digit of {} is {} and is greater than 5".format(number, last))
     elif last == 0:
-        print(f"Last digit of {number} is {last} and is 0")
+        print("Last digit of {} is {} and is 0".format(number, last))
     else:
-        print(f"Last digit of {number} is {last} and is less than 6 and not 0")
+        print("Last digit of {} is {} and is less than 6 and not 0".format(number, last))
 else:
     if -last > 5:
-        print(f"Last digit of {number} is -{last} and is greater than 5")
+        print("Last digit of {} is -{} and is greater than 5".format(number, last))
     elif last == 0:
-        print(f"Last digit of {number} is {last} and is 0")
+        print("Last digit of {} is {} and is 0".format(number, last))
     else:
-        print(f"Last digit of {number} is -{last} \
-and is less than 6 and not 0")
+        print("Last digit of {} is -{} and is less than 6 and not 0".format(number, last))
