@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 def uppercase(str):
-    for i, c in str:
+    result = ""
+    for i, c in enumerate(str):
         if ord(c) >= 97 and ord(c) <=122:
-            str[i] = chr(ord(c) - 32)
-    print("{}".format(str))
+            result += chr(ord(c) - 32)
+        else:
+            result += c
+    print("{}".format(result))
