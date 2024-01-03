@@ -7,16 +7,19 @@
  */
 int check_cycle(listint_t *list)
 {
-listint_t *ptr1 = list->next;
-listint_t *ptr2 = list;
+	listint_t *slow = list;
+	listint_t *fast = list;
 
-while (ptr1 != NULL && ptr1 != ptr2)
-{
-	ptr1 = ptr1->next;
-	ptr2 = ptr2->next;
-}
-if (ptr1 == NULL)
+	if (!list)
+		return (0);
+
+	while (slow && fast && fast->next)
+	{
+		slow = slow->next;
+		fast = fast->next->next;
+		if (slow == fast)
+			return (1);
+	}
+
 	return (0);
-else
-	return (1);
 }
