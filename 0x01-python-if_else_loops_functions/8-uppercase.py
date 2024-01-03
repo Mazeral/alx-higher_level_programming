@@ -2,7 +2,7 @@
 def uppercase(str):
     result = ""
     for i, c in enumerate(str):
-        if ord(c) >= 97 and ord(c) <=122:
+        if ord(c) >= 97 and ord(c) <= 122:
             result += chr(ord(c) - 32)
         else:
             result += c
