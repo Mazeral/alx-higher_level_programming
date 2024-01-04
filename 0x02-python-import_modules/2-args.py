@@ -7,4 +7,4 @@ else:
     count = 0
     for i in sys.argv[1:]:
         print("{}: {}".format(count, i))
-        count+=1
+        count += 1
