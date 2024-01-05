@@ -1,30 +1,26 @@
 #!/usr/bin/python3
-import calculator_1
-import sys
+from calculator_1  import add, sub, mul, div
+from sys import argv, exit
 
-arg_count = len(sys.argv)
-if arg_count != 4:
-    print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-    sys.exit(1)
-if sys.argv[2] == '+':
-    print("{} {} {} = {}".format(sys.argv[1], sys.argv[2],
-                                 sys.argv[3],
-                                 calculator_1.add(int(sys.argv[1]),
-                                                  int(sys.argv[3]))))
-elif sys.argv[2] == '-':
-    print("{} {} {} = {}".format(sys.argv[1], sys.argv[2],
-                                 sys.argv[3], calculator_1
-                                 .sub(int(sys.argv[1]),
-                                      int(sys.argv[3]))))
-elif sys.argv[2] == '/':
-    print("{} {} {} = {}".format(sys.argv[1], sys.argv[2],
-                                 sys.argv[3], calculator_1
-                                 .div(int(sys.argv[1]), int(sys.argv[3]))))
-elif sys.argv[2] == "*":
-    print("{} {} {} = {}".format(sys.argv[1], sys.argv[2],
-                                 sys.argv[3], calculator_1.
-                                 mul(int(sys.argv[1]), int(sys.argv[3]))))
-else:
-    print("Unknown operator. Available operators: +,\
-            -, * and / current operator: {}".format(sys.argv[2]))
-    sys.exit(1)
+if __name__ == "__main__":
+    arg_count = len(argv)
+    if arg_count != 4:
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        exit(1)
+    if argv[2] == '+':
+        print("{} {} {} = {}".format(argv[1], argv[2],
+                                     argv[3],
+                                     add(int(argv[1]), int(argv[3]))))
+    elif argv[2] == '-':
+        print("{} {} {} = {}".format(argv[1], argv[2],
+                                     argv[3], sub(int(argv[1]), int(argv[3]))))
+    elif argv[2] == '/':
+        print("{} {} {} = {}".format(argv[1], argv[2],
+                                     argv[3], div(int(argv[1]), int(argv[3]))))
+    elif argv[2] == "*":
+        print("{} {} {} = {}".format(argv[1], argv[2],
+                                     argv[3], mul(int(argv[1]), int(argv[3]))))
+    else:
+        print("Unknown operator. Available operators: +,\
+                -, * and / current operator: {}".format(argv[2]))
+        sys.exit(1)
