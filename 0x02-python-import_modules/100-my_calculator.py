@@ -23,4 +23,4 @@ if __name__ == "__main__":
     else:
         print("Unknown operator. Available operators:\
 +, -, * and / current operator: {}".format(argv[2]))
-        exit(-1)
+        exit(1)
