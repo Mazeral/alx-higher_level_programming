@@ -7,7 +7,7 @@ if __name__ == "__main__":
         print("1 argument:\n1: {}".format(sys.argv[1]))
     else:
         print("{} arguments:".format(len(sys.argv) - 1))
-        count = 0
+        count = 1
         for i in sys.argv[1:]:
             print("{}: {}".format(count, i))
             count += 1
