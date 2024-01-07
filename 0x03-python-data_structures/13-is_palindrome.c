@@ -29,10 +29,21 @@ int is_palindrome(listint_t **head)
 		node = node->next;
 	}
 
-	for (i = 0; i < len; i++)
+	if (len % 2 == 0)
 	{
-		if (arr[i] != arr[len - i])
-			return (1);
+		for (i = 0; i < len; i++)
+		{
+			if (arr[i] != arr[len - i])
+				return (1);
+		}
+	}
+	else
+	{
+		for (i = 0; i < len && i != (len / 2 + 1); i++)
+		{
+			if (arr[i] != arr[len - i])
+				return (1);
+		}
 	}
 
 	return (0);
