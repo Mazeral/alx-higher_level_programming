@@ -6,13 +6,12 @@
  */
 int is_palindrome(listint_t **head)
 {
-	size_t len = 0 ,i;
+	size_t len = 0, i;
 	listint_t *node = *head;
 	int *arr;
 
 	while (node != NULL)
 	{
-		arr[len] = node->n;
 		len++;
 		node = node->next;
 	}
@@ -20,7 +19,15 @@ int is_palindrome(listint_t **head)
 		return (0);
 
 	arr = malloc(sizeof(int) * len);
+	i = 0;
+
 	node = *head;
+	while (node != NULL)
+	{
+		arr[i] = node->n;
+		i++;
+		node = node->next;
+	}
 
 	for (i = 0; i < len; i++)
 	{
