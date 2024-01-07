@@ -55,7 +55,10 @@ int check_palindrome(size_t len, int *arr)
 		for (i = 0; i < len; i++)
 		{
 			if (arr[i] != arr[len - i])
+			{
+				free(arr);
 				return (1);
+			}
 		}
 	}
 	else
@@ -63,8 +66,12 @@ int check_palindrome(size_t len, int *arr)
 		for (i = 0; i < len && i != (len / 2 + 1); i++)
 		{
 			if (arr[i] != arr[len - i])
+			{
+				free(arr);
 				return (1);
+			}
 		}
 	}
+	free(arr);
 	return (0);
 }
