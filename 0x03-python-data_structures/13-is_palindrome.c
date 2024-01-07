@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdio.h>
 
 /**
  * check_palindrome - checks the plandrome
@@ -49,29 +50,32 @@ int is_palindrome(listint_t **head)
 int check_palindrome(size_t len, int *arr)
 {
 	size_t i;
+	int a, b;
 
 	if (len % 2 == 0)
 	{
 		for (i = 0; i < len; i++)
 		{
-			if (arr[i] != arr[len - i])
+			a = arr[i];
+			b = arr[(len - 1) - i];
+			if (arr[i] != arr[(len - 1) - i])
 			{
 				free(arr);
-				return (1);
+				return (0);
 			}
 		}
 	}
 	else
 	{
-		for (i = 0; i < len && i != (len / 2 + 1); i++)
+		for (i = 0; i < len && i != len / 2; i++)
 		{
-			if (arr[i] != arr[len - i])
+			if (arr[i] != arr[(len - 1) - i])
 			{
 				free(arr);
-				return (1);
+				return (0);
 			}
 		}
 	}
 	free(arr);
-	return (0);
+	return (1);
 }
