@@ -22,5 +22,5 @@ if __name__ == "__main__":
                                      argv[3], mul(int(argv[1]), int(argv[3]))))
     else:
         print("Unknown operator. Available operators:\
-+, -, * and /".format(argv[2]))
+ +, -, * and /".format(argv[2]))
         exit(1)
