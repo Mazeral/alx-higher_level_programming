@@ -50,14 +50,11 @@ int is_palindrome(listint_t **head)
 int check_palindrome(size_t len, int *arr)
 {
 	size_t i;
-	int a, b;
 
 	if (len % 2 == 0)
 	{
 		for (i = 0; i < len; i++)
 		{
-			a = arr[i];
-			b = arr[(len - 1) - i];
 			if (arr[i] != arr[(len - 1) - i])
 			{
 				free(arr);
