@@ -1,4 +1,13 @@
 #include "lists.h"
+
+/**
+ * check_palindrome - checks the plandrome
+ * @len: The len of the linked list
+ * @arr: The array of the elements
+ * Return: 0 or 1
+ */
+int check_palindrome(size_t len, int *arr);
+
 /**
  * is_palindrome - a function to check if the linked list is palindrome
  * @head: The head, AKA the start of the linked list
@@ -28,6 +37,18 @@ int is_palindrome(listint_t **head)
 		i++;
 		node = node->next;
 	}
+	return (check_palindrome(len, arr));
+}
+
+/**
+ * check_palindrome - checks the plandrome
+ * @len: The len of the linked list
+ * @arr: The array of the elements
+ * Return: 0 or 1
+ */
+int check_palindrome(size_t len, int *arr)
+{
+	size_t i;
 
 	if (len % 2 == 0)
 	{
@@ -45,6 +66,5 @@ int is_palindrome(listint_t **head)
 				return (1);
 		}
 	}
-
 	return (0);
 }
