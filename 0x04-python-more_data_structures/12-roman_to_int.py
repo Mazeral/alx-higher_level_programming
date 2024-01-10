@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
     total = 0
+    if not roman_string:
+        return None
     for i in roman_string:
         if i == 'I':
             total = total + 1
