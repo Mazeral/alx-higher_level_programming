@@ -8,5 +8,5 @@ A basic class
 
 class Square():
     """An empty Square class"""
-    def __init__(self, val):
-        self.__size = val ** 2
+    def __init__(self, size):
+        self.__size = size
