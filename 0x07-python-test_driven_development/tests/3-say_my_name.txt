@@ -1,0 +1,27 @@
+Docstring for `say_my_name` function
+==================================
+`say_my_name` is a a function which prints ``My name is <first_string> <second_string>``
+The `second_string` being an optional parameter.
+
+Usage
+=====
+Importing the function:
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Basic use case:
+	>>> say_my_name("John", "Doe")
+	My name is John Doe
+
+	>>> say_my_name("John")
+	My name is John 
+
+Wrong use cases:
+	>>> say_my_name(7)
+	Traceback (most recent call last):
+		...
+	ValueError: first_name must be a name
+
+	>>> say_my_name("Bond", 7)
+	Traceback (most recent call last):
+		...
+	ValueError: last_name must be a name

@@ -1,0 +1,36 @@
+Doctest for `print_square` function
+===================================
+`print_square` prints a square with a size depended on the user input
+Raises TypeError if the input is not an int
+Raises ValueError if the value is less than 0
+
+Usage
+=====
+
+Importing the module:
+	>>> print_square = __import__("4-print_square").print_square
+
+Basic use case:
+	>>> print_square(4)
+	####
+	####
+	####
+	####
+
+	>>> print_square(1)
+	#
+
+	>>> print_square(0)
+	 
+
+Exception examples:
+	>>> print_square("1")
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+
+	>>> print_square(-1)
+	Traceback (most recent call last):
+		...
+	ValueError: size must be >= 0
+
