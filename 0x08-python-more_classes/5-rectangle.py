@@ -11,7 +11,9 @@ class Rectangle:
     Attributes:
         width (int, optional): the width of the Rectangle
         height(int, optional): the height of the Rectangle
+        number_of_instances (int): The number of class instances
     """
+
     def __init__(self, width=0, height=0):
         """The __init__ of the object
 
@@ -95,4 +97,4 @@ class Rectangle:
 
     def __del__(self):
         """adding more functionality to del"""
-        print("Bye rectangle...")
+        print("{:s}".format("Bye rectangle..."))
