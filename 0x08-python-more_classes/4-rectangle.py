@@ -89,3 +89,6 @@ class Rectangle:
             rec.append("\n")
         rec.pop()
         return "".join(rec)
+
+    def __repr__(self):
+        return "Rectange({}, {})".format(self.__width, self.__height)
