@@ -97,7 +97,8 @@ class Rectangle:
                 if equal, returns rect_1
 
             Raises:
-                TypeError if either of the paramters are NOT Rectangle instnaces
+                TypeError if either of the paramters area
+                NOT Rectangle instnaces
         """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
