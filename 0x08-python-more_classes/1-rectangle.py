@@ -5,8 +5,7 @@ Rectangle class with some defined attributes.
 
 
 class Rectangle:
-    """Rectangle class the basic backbone of a class
-    """
+    """Rectangle class the basic backbone of a class"""
     def __init__(self, width):
         self.__width = width
 
