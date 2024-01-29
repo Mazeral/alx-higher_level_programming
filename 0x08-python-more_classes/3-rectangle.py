@@ -76,3 +76,16 @@ class Rectangle:
         if self.__width is 0 or self.__height is 0:
             return 0
         return 2 * (self.__width + self.__height)
+
+    def __str__(self):
+        """creates the rectangle and returns it"""
+        rec = []
+        if self.__width is 0 or self.__height is 0:
+            rec.append("")
+            return
+        for i in range(self.__height):
+            for k in range(self.__width):
+                rec.append("#")
+            rec.append("\n")
+        rec.pop()
+        return "".join(rec)
