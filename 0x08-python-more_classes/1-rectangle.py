@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Rectangle class
-A class with some attricutes
 
+Rectangle class with some defined attributes.
 """
 
 
