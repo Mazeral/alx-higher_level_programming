@@ -1,0 +1,31 @@
+Doctest for `text_indentation` function
+=======================================
+`text_indentation` prints a text, adding a new line after ['.', '?', ':']
+
+Usage
+=====
+
+importing the module:
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Example:
+	>>> text_indentation("Hello.World")
+	Hello
+	<BLANKLINE>
+	World
+
+	>>> text_indentation("Hello?World")
+	Hello
+	<BLANKLINE>
+	World
+
+	>>> text_indentation("Hello:World")
+	Hello
+	<BLANKLINE>
+	World
+
+Raise examples:
+	>>> text_indentation(7)
+	Traceback (most recent call last):
+		...
+	TypeError: text must be a string
