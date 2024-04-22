@@ -8,6 +8,7 @@ class Base:
         id: The identifier of the object
     """
     id = 0
+    __nb_objects = 0
     def __init__(self, id=None):
         """The __init__ of the __nb_objects
 
@@ -21,6 +22,9 @@ class Base:
         """
         if id is not None:
             self.id = id
+            Base.__nb_objects = Base.__nb_objects + 1
         else:
-            Base.id = Base.id + 1
+            self.id = self.__nb_objects + 1
+            Base.__nb_objects = Base.__nb_objects + 1
+
 
