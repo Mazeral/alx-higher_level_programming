@@ -3,6 +3,7 @@ from .base import Base
 
 """Rectange class based on the Base class"""
 
+
 class Rectangle(Base):
     """docstring for Rectange.
 
@@ -12,9 +13,9 @@ class Rectangle(Base):
         __x: The horizontal cordination of the Rectange
         __y: The vertical cordination of the Rectange
     """
-    def __init__(self, width, height, x = 0, y = 0, id = None):
+    def __init__(self, width, height, x=0, y=0, id=None):
         """The __init__ of the Rectange class
-        
+
         Args:
             width: Sets the width of the Rectange
             height: sets the height of the Rectange
@@ -88,8 +89,10 @@ class Rectangle(Base):
             for y_display in range(self.__width):
                 print('#', end="")
             print("")
+
     def __str__(self):
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+                self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
         """Update the Rectangle.
@@ -136,7 +139,6 @@ class Rectangle(Base):
                     self.x = v
                 elif k == "y":
                     self.y = v
-
 
     def to_dictionary(self):
         return {

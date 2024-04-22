@@ -2,6 +2,7 @@
 """The base class for the rest of the project"""
 import json
 
+
 class Base:
     """Class base
 
@@ -9,8 +10,11 @@ class Base:
         id: The identifier of the object
     """
     id = 0
+
     __nb_objects = 0
+
     def __init__(self, id=None):
+
         """The __init__ of the __nb_objects
 
         Args:
@@ -31,7 +35,6 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         return json.dumps(list_dictionaries)
-
 
     @classmethod
     def save_to_file(cls, list_objs):

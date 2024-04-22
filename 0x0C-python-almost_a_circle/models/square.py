@@ -1,17 +1,20 @@
 #!/bin/python3
 from .rectangle import Rectangle
 
+
 class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
-        super().__init__(size, size, x, y, id=id) 
+        super().__init__(size, size, x, y, id=id)
 
     def __str__(self):
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.height)
+        return "[Square] ({}) {}/{} - {}".format(
+                self.id, self.x, self.y, self.height)
 
     @property
     def size(self):
         """The size property."""
         return self.width
+
     @size.setter
     def size(self, value):
         self.width = value
