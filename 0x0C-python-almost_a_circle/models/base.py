@@ -51,3 +51,22 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        if dictionary and dictionary != {}:
+            cls.__name__ = "Rectangle":
+                new cls(1, 1)
+            else:
+                new cls(1)
+            new.update(**dictionary)
+            return new
+
+    @def load_from_file(cls):
+        filename = str(cls.__name__) + ".json"
+        try:
+            with open(filename, "r") as jsonfile:
+                list_dicts = Base.from_json_string(jsonfile.read())
+                return [cls.create(**d) for d in list_dicts]
+        except IOError:
+            return []
