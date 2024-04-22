@@ -62,7 +62,7 @@ class Base:
             new.update(**dictionary)
             return new
 
-    @def load_from_file(cls):
+    def load_from_file(cls):
         filename = str(cls.__name__) + ".json"
         try:
             with open(filename, "r") as jsonfile:
