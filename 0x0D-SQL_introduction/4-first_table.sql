@@ -1,5 +1,5 @@
 -- A script for creating a table
-CREATE TABLE IF NOT EXISTS first_table (
+CREATE table IF NOT EXISTS first_table (
 	`id` INT,
-	`name` VARCHAR(256),
+	`name` VARCHAR(256)
 );
