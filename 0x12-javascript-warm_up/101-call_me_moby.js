@@ -1,8 +1,8 @@
 #!/usr/bin/node
-function callMeMoby(x, action)
+function callMeMoby(x, theFunction)
 {
 	for (let index = 0; index < x; index++) {
-		action();
+		theFunction();
 	}
 }
 module.exports.callMeMoby = callMeMoby;
