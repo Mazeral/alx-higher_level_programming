@@ -1,5 +1,4 @@
-#!/snap/bin/node
-// #!/usr/bin/node
+#!/usr/bin/node
 const size = parseInt(process.argv[2]);
 let output = "";
 if (!size)
