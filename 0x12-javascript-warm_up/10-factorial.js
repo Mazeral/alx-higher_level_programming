@@ -1,5 +1,4 @@
-#!/snap/bin/node
-// #!/usr/bin/node
+#!/usr/bin/node
 function factorial(num) {
 	if (num <= 0)
 		return 1;
