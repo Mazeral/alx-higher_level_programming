@@ -2,7 +2,10 @@
 if (process.argv.slice(2).length === 0) {
   console.log('No argument');
 } else {
-  process.argv.slice(2).forEach(val => {
-    console.log(val);
-  });
+
+if (process.argv.slice(2).length === 1)
+	console.log("Argument found")
+
+if (process.argv.slice(2).length > 1)
+	console.log("Arguments found")
 }
