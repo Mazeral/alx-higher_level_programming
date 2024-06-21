@@ -9,14 +9,16 @@ class Rectangle {
   }
 
   print () {
-    let seq = '';
-    for (let index = 0; index < this.height; index++) {
-      for (let index = 0; index < this.width; index++) {
-        seq += '#';
+    if (this.width > 0 && this.height > 0) {
+      let seq = '';
+      for (let index = 0; index < this.height; index++) {
+        for (let index = 0; index < this.width; index++) {
+          seq += 'X';
+        }
+        if (index + 1 < this.height) { seq += '\n'; }
       }
-      seq += '';
+      console.log(seq);
     }
-    console.log(seq);
   }
 
   rotate () {
@@ -36,4 +38,4 @@ class Square extends Rectangle {
     super(size, size);
   }
 }
-module.exports.Square = Square;
+module.exports = Square;
