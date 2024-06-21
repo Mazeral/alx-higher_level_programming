@@ -45,7 +45,7 @@ class Square extends Rectangle {
         for (let index = 0; index < this.width; index++) {
           seq += character;
         }
-        seq += '';
+        if (index + 1 < this.height) { seq += '\n'; }
       }
       console.log(seq);
     }
