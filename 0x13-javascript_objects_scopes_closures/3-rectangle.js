@@ -8,8 +8,8 @@ class Rectangle {
   }
 
   print () {
-if (this.width > 0 && this.height > 0)
-{
+	if (this.width > 0 && this.height > 0)
+	{
 let seq = '';
 for (let index = 0; index < this.height; index++) {
   for (let index = 0; index < this.width; index++) {
@@ -21,7 +21,7 @@ for (let index = 0; index < this.height; index++) {
 console.log(seq);
 }
 
-}
+		}
 }
 
 module.exports = Rectangle;
