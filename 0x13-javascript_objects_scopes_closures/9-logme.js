@@ -1,6 +1,8 @@
 #!/usr/bin/node
 exports.logMe = function (item) {
-  logMe.cnt = 0;
-  console.log(`${cnt}: ${item}`);
-  logMe.cnt++;
+  if (typeof exports.logMe.cnt === 'undefined') {
+    exports.logMe.cnt = 0;
+  }
+  console.log(`${exports.logMe.cnt}: ${item}`);
+  exports.logMe.cnt++;
 };
