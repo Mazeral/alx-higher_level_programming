@@ -37,13 +37,13 @@ class Square extends Rectangle {
     super(size, size);
   }
 
-  charPrint (character) {
+  charPrint (c) {
     if (this.height > 0) {
-      if (!character) { character = 'X'; }
+      if (!c) { c = 'X'; }
       let seq = '';
       for (let index = 0; index < this.height; index++) {
         for (let index = 0; index < this.width; index++) {
-          seq += character;
+          seq += c;
         }
         if (index + 1 < this.height) { seq += '\n'; }
       }
