@@ -17,7 +17,7 @@ if __name__ == "__main__":
     query = """SELECT cities.id, cities.name, states.name\
     FROM cities, states WHERE cities.state_id = states.id
     ORDER BY cities.id ASC"""
-    cur.execute(query, (sys.argv[4],))
+    cur.execute(query)
     results = cur.fetchall()
     for row in results:
         print(row)
