@@ -19,6 +19,8 @@ if __name__ == "__main__":
     # After that, you will select the table you want to fetch the data from
     # Finally, select the data (Remember that this is how SQL works!)
     query = """SELECT cities.name FROM cities\
+            FROM states, cities\
+            WHERE states.name LIKE BINARY '%s'\
             JOIN states ON cities.state_id = states.id"""
     cur.execute(query, (sys.argv[4],))
     results = cur.fetchall()
