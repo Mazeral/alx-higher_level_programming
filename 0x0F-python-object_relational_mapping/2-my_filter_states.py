@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python2
 """
     A script that lists all the states
     that match the argument
@@ -14,8 +14,8 @@ if __name__ == "__main__":
                          passwd=sys.argv[2],
                          db=sys.argv[3])
     cur = db.cursor()
-    query = "SELECT * FROM states WHERE name LIKE\
-    '{}' ORDER BY id ASC".format(sys.argv[4])
+    query = """SELECT * FROM states WHERE name LIKE\
+    '{}' ORDER BY id ASC""".format(sys.argv[4])
     cur.execute(query)
     results = cur.fetchall()
     for row in results:
