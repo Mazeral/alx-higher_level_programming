@@ -15,8 +15,8 @@ if __name__ == "__main__":
                          db=sys.argv[3])
     cur = db.cursor()
     query = """SELECT id, name, state\
-    FROM states WHERE name LIKE BINARY\
-    %s ORDER BY id ASC"""
+    FROM cities JOIN states ON cities.state_id = states.id
+    ORDER BY cities.id ASC"""
     cur.execute(query, (sys.argv[4],))
     results = cur.fetchall()
     for row in results:
