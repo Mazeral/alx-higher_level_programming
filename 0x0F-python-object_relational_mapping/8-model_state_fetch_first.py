@@ -20,7 +20,7 @@ if __name__ == "__main__":
     session = Session()
 
     # Fetch all states from the database and order them by id
-    states = session.query(State)order_by(State.id).first()
+    states = session.query(State).order_by(State.id).first()
 
     if states is None:
         print("Nothing")
