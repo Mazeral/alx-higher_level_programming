@@ -3,7 +3,7 @@
 This script fetches the first state from the database and prints it.
 
 Usage:
-    python4 8-model_state_fetch_first.py <username> <password> <database_name>
+    python3 8-model_state_fetch_first.py <username> <password> <database_name>
 """
 
 import sys
