@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import create_engine, Integer, String, Column, Table
-from sqlalchemy.orm import sessionmaker
-import sys
+from sqlalchemy import Column
+from sqlalchemy import String
+from sqlalchemy import Integer
 
 Base = declarative_base()
 
