@@ -18,9 +18,10 @@ if __name__ == "__main__":
     # First, you need to join the 2 tables on a common key
     # After that, you will select the table you want to fetch the data from
     # Finally, select the data (Remember that this is how SQL works!)
-    query = """SELECT cities.name FROM cities\
-            WHERE states.name LIKE BINARY %s\
-            INNER JOIN states ON cities.state_id = states.id\
+    query = """SELECT cities.name
+            FROM cities
+            INNER JOIN states ON cities.state_id = states.id
+            WHERE states.name LIKE BINARY %s
             ORDER BY cities.id ASC"""
     cur.execute(query, (sys.argv[4],))
     results = cur.fetchall()
