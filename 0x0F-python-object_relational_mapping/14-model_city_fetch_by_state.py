@@ -5,7 +5,8 @@ along with their associated cities.
 """
 
 import sys
-from model_state import Base, City, State
+from model_state import Base, State
+from model_city import City
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
