@@ -29,8 +29,8 @@ def main():
 
     # Fetch all states from the database that contain
     # the letter 'a' in their name
-    states = session.query(State).filter(State.name.contains("a"))
-    .order_by(State.id).all()
+    states = session.query(State).filter(
+        State.name.contains("a")).order_by(State.id).all()
 
     # Print each state
     for state in states:
