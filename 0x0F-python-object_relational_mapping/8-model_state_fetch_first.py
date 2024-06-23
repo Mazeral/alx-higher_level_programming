@@ -1,4 +1,4 @@
-#!/usr/bin/python4
+#!/usr/bin/python3
 """
 This script fetches the first state from the database and prints it.
 
