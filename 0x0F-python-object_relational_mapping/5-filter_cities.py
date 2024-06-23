@@ -1,30 +1,35 @@
 #!/usr/bin/python3
+
 """
-    a script that takes in the name of a state as an argument
-    and lists all cities of that state,
-    using the database hbtn_0e_4_usa
+    A script that lists all cities in a state from the database hbtn_0e_0_usa
+    Username, password and database name and state are given as user args
 """
 
-import MySQLdb
+
 import sys
+import MySQLdb
 
-if __name__ == "__main__":
-    db = MySQLdb.connect(host='localhost',
-                         port=3306,
-                         user=sys.argv[1],
+
+if __name__ == '__main__':
+    db = MySQLdb.connect(user=sys.argv[1],
                          passwd=sys.argv[2],
-                         db=sys.argv[3])
-    cur = db.cursor()
-    # First, you need to join the 2 tables on a common key
-    # After that, you will select the table you want to fetch the data from
-    # Finally, select the data (Remember that this is how SQL works!)
-    query = """SELECT cities.name\
-            FROM cities\
-            INNER JOIN states ON cities.state_id = states.id\
-            WHERE states.name LIKE BINARY %s\
-            ORDER BY cities.id ASC"""
-    cur.execute(query, (sys.argv[4],))
-    results = cur.fetchall()
+                         db=sys.argv[3],
+                         host='localhost',
+                         port=3306)
+
+    cursor = db.cursor()
+
+    sql = """SELECT cities.name
+          FROM states
+          INNER JOIN cities ON states.id = cities.state_id
+          WHERE states.name = %s
+          ORDER BY cities.id ASC"""
+
+    cursor.execute(sql, (sys.argv[4],))
+
+    data = cursor.fetchall()
+
     print(", ".join([city[0] for city in data]))
-    cur.close()
+
+    cursor.close()
     db.close()
