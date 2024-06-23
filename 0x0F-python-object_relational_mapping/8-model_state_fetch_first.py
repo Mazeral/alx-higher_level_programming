@@ -26,7 +26,6 @@ if __name__ == "__main__":
         print("Nothing")
     # Print each state
     if states:
-        for state in states:
-            print("{}: {}".format(state.id, state.name))
+        print("{}: {}".format(states.id, states.name))
 
     session.close()
