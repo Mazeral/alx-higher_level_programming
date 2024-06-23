@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
-This script fetches all states from the database and prints them,
-along with their associated cities.
+    A script that prints all City objects from the database hbtn_0e_6_usa
+    Username, password and dbname wil be passed as arguments to the script.
 """
+
 
 import sys
 from model_state import Base, State
@@ -11,40 +12,24 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
 
-def main():
-    """
-    Main function that fetches all states and their associated cities
-    from the database and prints them.
-
-    Args:
-        sys.argv[1]: username
-        sys.argv[2]: password
-        sys.argv[3]: database name
-    """
-
-    # Create a database engine
-    # Format the connection string with the provided username,
-    # password, and database name
+if __name__ == '__main__':
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
-        sys.argv[1], sys.argv[2], sys.argv[3]),
-        pool_pre_ping=True)
+                           sys.argv[1], sys.argv[2], sys.argv[3]),
+                           pool_pre_ping=True)
 
-    # Create a session to interact with the database
     Session = sessionmaker(bind=engine)
+    Base.metadata.create_all(engine)
+
+    # create a session
     session = Session()
 
-    # Fetch all states from the database and order them by id
-    states = session.query(State, City).filter(State.id == City.state_id)
+    # extract all cities in a state
+    cities = session.query(State, City) \
+                    .filter(State.id == City.state_id)
 
-    # Print each state and its associated cities
-    for st in states:
-        print("{}: ({}) {}".format(states.State.name,
-                                   states.City.id,
-                                   states.City.name))
+    # print all states
 
-    # Close the session
+    for ci in cities:
+        print("{}: ({}) {}".format(ci.State.name, ci.City.id, ci.City.name))
+
     session.close()
-
-
-if __name__ == "__main__":
-    main()
