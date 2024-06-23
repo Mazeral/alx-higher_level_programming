@@ -9,7 +9,6 @@ from sqlalchemy import Column
 from sqlalchemy import String
 from sqlalchemy import Integer
 from sqlalchemy.orm import relatioship
-import State
 
 
 Base = declarative_base()
