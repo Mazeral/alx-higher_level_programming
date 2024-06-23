@@ -32,6 +32,7 @@ def main():
 
     # Create a session to interact with the database
     Session = sessionmaker(bind=engine)
+    Base.metadata.create_all(engine)
     session = Session()
 
     # Fetch all states from the database that contain
