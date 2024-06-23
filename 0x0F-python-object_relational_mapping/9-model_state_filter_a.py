@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This script fetches all states from the database that contain the letter 'a' in their name
+This script fetches all states from the database
+that contain the letter 'a' in their name
 and prints them.
 """
 
@@ -12,7 +13,8 @@ from sqlalchemy import create_engine
 
 def main():
     """
-    Main function that connects to the database, fetches states containing 'a' in their name,
+    Main function that connects to the database,
+    fetches states containing 'a' in their name,
     and prints them.
     """
 
@@ -25,8 +27,10 @@ def main():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Fetch all states from the database that contain the letter 'a' in their name
-    states = session.query(State).filter(State.name.contains("a")).order_by(State.id).all()
+    # Fetch all states from the database that contain
+    # the letter 'a' in their name
+    states = session.query(State).filter(State.name.contains("a"))
+    .order_by(State.id).all()
 
     # Print each state
     for state in states:
