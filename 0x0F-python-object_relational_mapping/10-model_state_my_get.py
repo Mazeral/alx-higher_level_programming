@@ -18,8 +18,8 @@ def main():
     """
 
     # Create a database engine
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                           .format(sys.argv[1], sys.argv[2], sys.argv[3]),
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+                           sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
 
     # Create a session
@@ -38,7 +38,7 @@ def main():
         print("Not found")
     # Otherwise, print the id and name of the first state
     else:
-        print("{}: {}".format(states.id, states.name))
+        print(states.id)
 
     # Close the session
     session.close()
