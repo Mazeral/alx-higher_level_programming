@@ -5,11 +5,7 @@
 """
 
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column
-from sqlalchemy import String
-from sqlalchemy import Integer
-from sqlalchemy import relationship
-
+from sqlalchemy import Column, String, Integer
 
 Base = declarative_base()
 
