@@ -39,6 +39,9 @@ def main():
     session.add(new_state)
     # Commit the changes to the database
     session.commit()
+    # print state.id
+    state_add = session.query(State).filter(State.name == 'Louisiana').one()
+    print(state_add.id)
     # Close the session
     session.close()
 
