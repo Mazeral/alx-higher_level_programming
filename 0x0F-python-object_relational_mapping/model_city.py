@@ -8,8 +8,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column
 from sqlalchemy import String
 from sqlalchemy import Integer
-from sqlalchemy.orm import relatioship
-
+from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
