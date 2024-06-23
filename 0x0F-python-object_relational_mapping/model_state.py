@@ -5,7 +5,9 @@ from sqlalchemy.orm import sessionmaker
 
 Base = declarative_base()
 
+
 class State(Base):
+
     """
     Represents a state in the database.
 
@@ -24,6 +26,7 @@ class State(Base):
     # The name of the state
     name = Column(String(128),
                   nullable=False)
+
 
 engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
                        .format(sys.argv[1],
