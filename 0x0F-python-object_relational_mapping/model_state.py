@@ -28,10 +28,9 @@ class State(Base):
                   nullable=False)
 
 
-engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                       .format(sys.argv[1],
-                               sys.argv[2],
-                               sys.argv[3]))
+engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1],
+                       sys.argv[2],
+                       sys.argv[3]))
 
 Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
