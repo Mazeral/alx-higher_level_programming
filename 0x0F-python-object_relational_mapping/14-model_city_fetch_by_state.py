@@ -33,16 +33,17 @@ def main():
     session = Session()
 
     # Fetch all states from the database and order them by id
-    states = session.query(State).order_by(State.id).all()
+    states = session.query(State, City).filter(State.id == City.state_id).all()
 
     # If no states are found, print "Nothing"
     if states is None:
         print("Nothing")
     # Print each state and its associated cities
     else:
-        for state in states:
-            for city in state.cities:
-                print(f"{state.name}: ({city.id}) {city.name}")
+        for st in states:
+            print("{}: ({}) {}".format(states.State.name,
+                                       states.City.id,
+                                       states.City.name))
 
     # Close the session
     session.close()
