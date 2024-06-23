@@ -38,7 +38,7 @@ def main():
     # the letter 'a' in their name
     # Order them by id
     delete_states = session.query(State).filter(
-        State.name.contains("a")).order_by(State.id).all()
+        State.name.contains("a")).first()
 
     # Delete the fetched states from the database
     session.delete(delete_states)
