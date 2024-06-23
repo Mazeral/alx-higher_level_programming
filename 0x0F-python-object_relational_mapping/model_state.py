@@ -27,8 +27,3 @@ class State(Base):
     # The name of the state
     name = Column(String(128),
                   nullable=False)
-
-
-engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1],
-                       sys.argv[2],
-                       sys.argv[3]))
