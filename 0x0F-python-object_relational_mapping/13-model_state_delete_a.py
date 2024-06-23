@@ -32,17 +32,17 @@ def main():
 
     # Create a session to interact with the database
     Session = sessionmaker(bind=engine)
-    Base.metadata.create_all(engine)
     session = Session()
 
     # Fetch all states from the database that contain
     # the letter 'a' in their name
     # Order them by id
     delete_states = session.query(State).filter(
-        State.name.contains("a")).first()
+        State.name.contains("a")).order_by(State.id).all()
 
     # Delete the fetched states from the database
-    session.delete(delete_states)
+    for state in delete_states:
+        session.delete(state)
     session.commit()
 
     # Close the session
