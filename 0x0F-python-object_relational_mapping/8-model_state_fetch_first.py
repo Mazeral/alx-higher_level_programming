@@ -22,7 +22,7 @@ if __name__ == "__main__":
     # Fetch all states from the database and order them by id
     states = session.query(State).order_by(State.id).first()
 
-    if not states:
+    if states is None:
         print("Nothing")
     # Print each state
     if states:
