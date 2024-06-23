@@ -34,8 +34,8 @@ def main():
     session = Session()
 
     # Query the state with id 2 and update its name
-    update_obj = session.query(State).filter(State.id==2).first()
-    update_obj.name="New Mexico"
+    update_obj = session.query(State).filter(State.id == 2).first()
+    update_obj.name = "New Mexico"
     session.commit()
     # Close the session
     session.close()
@@ -43,4 +43,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
