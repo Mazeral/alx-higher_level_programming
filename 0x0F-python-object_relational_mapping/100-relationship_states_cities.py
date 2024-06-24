@@ -37,7 +37,6 @@ def main():
     # Create a new state object with a city
     state = State(name="California",
                   cities=["San Francisco"])
-
     # Add the new state to the session
     session.add(state)
 

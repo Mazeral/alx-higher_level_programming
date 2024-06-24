@@ -46,7 +46,7 @@ class City(Base):
     # Relationship with the State class.
     # CASCADE on delete and update.
     state = relationship("State",
-                         back_populates="cities",
+                         back_populates="state",
                          ondelete="CASCADE",
                          onupdate="CASCADE")
 
