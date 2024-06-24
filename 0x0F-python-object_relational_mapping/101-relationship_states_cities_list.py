@@ -7,8 +7,8 @@
 
 import sys
 
-from model_state import Base, State
-from model_city import City
+from relationship_state import Base, State
+from relationship_city import City
 
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
@@ -35,7 +35,7 @@ def main():
     session = Session()
 
     # Create a new state object with a city
-    states = session.query(State, City).order_by(State.id, City.id).all()
+    states = session.query(State).order_by(State.id).all()
 
     # Print all states and their cities
     for state in states:
