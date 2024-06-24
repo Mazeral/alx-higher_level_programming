@@ -12,12 +12,18 @@ Base = declarative_base()
 
 class State(Base):
     """
-        State class inherits the Base class
-        Attributes:
-            id (int)
-            name (string)
+    State class inherits the Base class
+
+    Attributes:
+        id (int): Primary key for the state.
+        name (string): Name of the state.
     """
     __tablename__ = 'states'
 
-    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
-    name = Column(String(128), nullable=False)
+    # Define the columns of the table
+    id = Column(Integer,
+                primary_key=True,
+                autoincrement=True,
+                nullable=False)
+    name = Column(String(128),
+                  nullable=False)
