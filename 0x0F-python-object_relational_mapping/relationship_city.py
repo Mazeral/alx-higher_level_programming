@@ -42,11 +42,3 @@ class City(Base):
     state_id = Column(Integer,
                       ForeignKey('states.id'),
                       nullable=False)
-
-    # Relationship with the State class.
-    # CASCADE on delete and update.
-    state = relationship("State",
-                         back_populates="state",
-                         ondelete="CASCADE",
-                         onupdate="CASCADE")
-
