@@ -18,9 +18,16 @@ def main():
     """
     Main function that creates a session and adds a new state with a city to the database.
     Then it closes the session.
+
+    Args:
+        sys.argv[1]: username
+        sys.argv[2]: password
+        sys.argv[3]: database name
     """
 
     # Create a database engine
+    # Format the connection string with the provided username,
+    # password, and database name
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
                            sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
@@ -43,7 +50,9 @@ def main():
     # Add the new city to the session and add it to states
     state.cities.append(city)
 
+    # Add the new state and city to the session
     session.add(state)
+
     # Commit the changes to the database
     session.commit()
 

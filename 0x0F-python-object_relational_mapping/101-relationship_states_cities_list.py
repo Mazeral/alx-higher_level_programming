@@ -16,13 +16,13 @@ from sqlalchemy import create_engine
 
 def main():
     """
-    Main function that creates a session and adds a new state with a city to the database.
-    Then it closes the session.
+    Main function that creates a session and prints all states and their cities.
+    Username, password and dbname are passed as command line arguments.
     """
 
     # Create a database engine
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
-                           sys.argv[1], sys.argv[2], sys.argv[3]),
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
 
     # Create a session
@@ -35,19 +35,16 @@ def main():
     session = Session()
 
     # Create a new state object with a city
-    state = State(name="California")
-    # Add the new state to the session
-    session.add(state)
+    states = session.query(State, City).order_by(State.id, City.id).all()
 
-    # Create a new city object
-    city = City(name="San Francisco")
-    # Add the new city to the session and add it to states
-    session.add(city)
-    state.cities.append(city)
+    # Print all states and their cities
+    for state in states:
+        print(f"{state.State.id}: {state.State.name}")
+        for city in state.State.cities:
+            print(f"\t{city.id} {city.name}")
 
     # Commit the changes to the database
     session.commit()
-
     # Close the session
     session.close()
 
