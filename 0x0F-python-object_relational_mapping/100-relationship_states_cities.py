@@ -40,9 +40,10 @@ def main():
     session.add(state)
 
     # Create a new city object
-    city = City(name="San Francisco", state_id=state.id)
-    # Add the new city to the session
+    city = City(name="San Francisco")
+    # Add the new city to the session and add it to states
     session.add(city)
+    state.cities.append(city)
 
     # Commit the changes to the database
     session.commit()
