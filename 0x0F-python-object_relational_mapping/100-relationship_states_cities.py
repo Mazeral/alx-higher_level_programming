@@ -40,7 +40,7 @@ def main():
     session.add(state)
 
     # Create a new city object
-    city = City(name="San Francisco", state=state)
+    city = City(name="San Francisco", state_id=state.id)
     # Add the new city to the session
     session.add(city)
 
