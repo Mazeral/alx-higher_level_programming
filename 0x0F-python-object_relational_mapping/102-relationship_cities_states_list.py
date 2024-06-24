@@ -21,6 +21,8 @@ def main():
     """
 
     # Create a database engine
+    # Format the connection string with the provided username,
+    # password, and database name
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
@@ -34,14 +36,13 @@ def main():
     # Create a session to interact with the database
     session = Session()
 
-    # Create a new state object with a city
-    states = session.query(State, City).order_by(State.id, City.id).all()
+    # Query all cities from the database and order them by id
+    cities = session.query(City).order_by(City.id).all()
 
-    # Print all states and their cities
-    for state in states:
-        print(f"{state.id}: {state.name}")
-        for city in state.cities:
-            print(f"\t{city.id} {city.name}")
+    # Print each city and its corresponding state
+    for city in cities:
+        # Print the city's id, name, and its corresponding state's name
+        print(f"{city.id}: {city.name} -> {city.state.name}")
 
     # Commit the changes to the database
     session.commit()
