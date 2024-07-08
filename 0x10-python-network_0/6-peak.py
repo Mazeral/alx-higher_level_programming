@@ -11,7 +11,8 @@ def find_peak(list_of_integers):
         list_of_integers (list): The input array.
 
     Returns:
-        int: The peak element in the list_of_integersay. If the array is empty, None is returned.
+        int: The peak element in the list_of_integersay.
+        If the array is empty, None is returned.
 
     """
     # Base case: if the list_of_integersay is empty, return None
