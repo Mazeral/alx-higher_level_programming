@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+"""Finds a peak element in a list_of_integersay."""
 
 def find_peak(list_of_integers):
     """
