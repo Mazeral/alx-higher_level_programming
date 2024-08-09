@@ -192,6 +192,3 @@ $.get('https://hellosalut.stefanbohacek.dev/?lang=fr', function(data) {
 ## Author
 
 Mohammad Omar Siddiq
-```
-
-This `README.md` file provides a summary of each task, the corresponding file, and a sample script to accomplish the task. You can use this as a guide while working on the tasks in the specified repository and directory.
