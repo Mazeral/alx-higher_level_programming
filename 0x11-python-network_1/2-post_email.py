@@ -11,8 +11,10 @@ import sys
 if __name__ == "__main__":
     with urllib.request.urlopen(sys.argv[1], sys.argv[2]) as url, mail:
         value  = {"email" : mail}
-        data = urllib.parse.urlencode(value).encode('ascii')
+        data = urllib.parse.urlencode(value).encode()
 
-        request = urllib.request.Request(url, data)
+        # defining the method is not nessesary but helps in understanding the code
+        # request will save the response
+        request = urllib.request.Request(url, data, method="POST")
         with urllib.request.urlopen(request) as resp:
-            print(resp.read().decode("utf-8"))
+            print(resp.read().decode())
