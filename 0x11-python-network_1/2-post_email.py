@@ -11,7 +11,7 @@ import sys
 if __name__ == "__main__":
     url = sys.argv[1]
     mail = sys.argv[2]
-    value  = {"email": mail}
+    value = {"email": mail}
     data = parse.urlencode(value).encode("utf-8")
 
     # defining the method is not nessesary but helps in understanding the code
