@@ -5,12 +5,14 @@ and displays the body of the response (decoded in utf-8)
 sys will be used to receive the url and the mail
 """
 
-from urllib import request
+import urllib
 import sys
 
 if __name__ == "__main__":
-    with request.urlopen(sys.argv[1], sys.argv[2]) as url, mail:
-        url = url.encode('utf-8')
-        mail = mail.encode('utf-8')
-        req = request.Request(url, mail)
-        resp = request.urlopen(req)
+    with urllib.request.urlopen(sys.argv[1], sys.argv[2]) as url, mail:
+        value  = {"email" : mail}
+        data = urllib.parse.urlencode(value).encode('utf-8')
+
+        request = urllib.request.Request(url, data)
+        with urllib.request.urlopen(request) as resp:
+            print(resp.read().decode("utf-8"))
