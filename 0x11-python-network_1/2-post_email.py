@@ -9,6 +9,6 @@ from urllib import request
 import sys
 
 if __name__ == "__main__":
-    with urlopen(sys.argv[1], sys.argv[2]) as url, mail:
+    with request.urlopen(sys.argv[1], sys.argv[2]) as url, mail:
         req = request.Request(url, mail)
         resp = request.urlopen(req)
