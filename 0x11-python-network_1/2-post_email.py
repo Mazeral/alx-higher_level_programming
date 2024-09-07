@@ -10,5 +10,5 @@ import sys
 
 if __name__ == "__main__":
     with request.urlopen(sys.argv[1], sys.argv[2]) as url, mail:
-        req = request.Request(url, mail)
+        req = request.Request(url, mail).encode('utf-8')
         resp = request.urlopen(req)
