@@ -7,11 +7,11 @@ import sys
 import requests
 
 if __name__ == "__main__":
-    url = "https://api.github.com"
+    url = "https://api.github.com/user"
     username = sys.argv[1]
     token = sys.argv[2]
 
     data = {"user": username, "token": token}
 
-    resp = requests.post(url=url, data=data)
+    resp = requests.get(url=url, data=data)
     print(resp.content.decode())
