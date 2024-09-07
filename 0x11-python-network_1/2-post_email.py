@@ -18,4 +18,5 @@ if __name__ == "__main__":
     # request will save the response
     req = request.Request(url, data=data, method="POST")
     with request.urlopen(req) as resp:
+        # reads the response and decodes it
         print(resp.read().decode())
