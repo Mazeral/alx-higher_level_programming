@@ -7,5 +7,6 @@ import requests
 if __name__ == "__main__":
     url = "https://alx-intranet.hbtn.io/status"
     resp = requests.get(url)
-    print("Body reponse:\n\t- type: {}\n\t- content: {}".
+    # Decode is important, even in requests library!
+    print("Body response:\n\t- type: {}\n\t- content: {}".
           format(type(resp.content.decode()), resp.content.decode()))
