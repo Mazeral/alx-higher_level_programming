@@ -16,6 +16,7 @@ if __name__ == "__main__":
         data = resp.json()
         if len(data) == 0:
             print("No result")
+            raise
         print("[{}] {}".data.id, data.name)
         response.raise_for_status()
     except requests.exceptions.RequestException:
