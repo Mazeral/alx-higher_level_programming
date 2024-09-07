@@ -6,8 +6,9 @@ with the letter as a parameter."""
 import sys, requests
 if __name__ == "__main__":
     url = "http://0.0.0.0:5000/search_user"
-    q = sys.argv[1]
-    if q is None:
+    if len(sys.argv) > 1:
+        q = sys.argv[1]
+    else:
         q = ""
     resp = requests.post(url=url, data=q)
     if not json.dump(resp):
