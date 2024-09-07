@@ -12,8 +12,12 @@ if __name__ == "__main__":
     else:
         q = ""
     resp = requests.post(url=url, data=q)
-    data = resp.json()
-    if not data:
-        print("Not a valid JSON")
-    elif data and len(data) == 0:
-        print("No result")
+    try:
+        data = resp.json()
+        print("[{}] {}".data.id, data.name)
+        response.raise_for_status()
+    except requests.exceptions.RequestException:
+        if not data:
+            print("Not a valid JSON")
+        elif data and len(data) == 0:
+            print("No result")
