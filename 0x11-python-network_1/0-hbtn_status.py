@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# Importing urlopen from urllib.request to fetch the content of a URL
 from urllib.request import urlopen
 
 if __name__ == "__main__":
