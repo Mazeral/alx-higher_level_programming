@@ -5,16 +5,17 @@ and displays the body of the response (decoded in utf-8)
 sys will be used to receive the url and the mail
 """
 
-import urllib
+from urllib import request, parse
 import sys
 
 if __name__ == "__main__":
-    with urllib.request.urlopen(sys.argv[1], sys.argv[2]) as url, mail:
-        value  = {"email" : mail}
-        data = urllib.parse.urlencode(value).encode()
+    url = sys.argv[1]
+    mail = sys.argv[2]
+    value  = {"email": mail}
+    data = parse.urlencode(value).encode("utf-8")
 
-        # defining the method is not nessesary but helps in understanding the code
-        # request will save the response
-        request = urllib.request.Request(url, data, method="POST")
-        with urllib.request.urlopen(request) as resp:
-            print(resp.read().decode())
+    # defining the method is not nessesary but helps in understanding the code
+    # request will save the response
+    req = request.Request(url, data=data, method="POST")
+    with request.urlopen(req) as resp:
+        print(resp.read().decode())
