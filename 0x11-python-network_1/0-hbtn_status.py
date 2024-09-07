@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-# Importing urlopen from urllib.request to fetch the content of a URL
+"""This script fetches data from
+    https://alx-intranet.hbtn.io/status
+"""
+
 from urllib.request import urlopen
 
 if __name__ == "__main__":
