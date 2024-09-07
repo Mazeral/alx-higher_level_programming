@@ -11,11 +11,11 @@ if __name__ == "__main__":
     q = sys.argv[1] if len(sys.argv) > 1 else ""
     resp = requests.post(url=url, data={"q": q})
     try:
-        response.raise_for_status()
+        resp.raise_for_status()
         data = resp.json()
         if len(data) == 0:
             print("No result")
             raise
         print("[{}] {}".data.id, data.name)
-    except requests.exceptions.ValueError:
+    except Exception:
         print("Not a valid JSON")
