@@ -14,4 +14,4 @@ if __name__ == "__main__":
     data = {"user": username, "token": token}
 
     resp = requests.get(url=url, data=data)
-    print(resp.content.decode())
+    print(resp.json()['id'])
