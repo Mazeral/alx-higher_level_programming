@@ -5,7 +5,6 @@ with the letter as a parameter."""
 
 import sys
 import requests
-import json
 if __name__ == "__main__":
     url = "http://0.0.0.0:5000/search_user"
     if len(sys.argv) > 1:
@@ -13,7 +12,8 @@ if __name__ == "__main__":
     else:
         q = ""
     resp = requests.post(url=url, data=q)
-    if not json.dump(resp):
+    data = resp.json()
+    if not data:
         print("Not a valid JSON")
-    elif json.dump(resp) and len(json.dump(resp)) == 0:
+    elif data and len(data) == 0:
         print("No result")
