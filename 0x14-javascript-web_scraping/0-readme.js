@@ -7,7 +7,7 @@ fs.readFile(process.argv[1], 'utf8', (err, data) => {
     console.log(err);
   } else {
     const decoder = new TextDecoder('utf-8');
-    const fileText = decoder.decode(process.argv[1]);
+    const fileText = decoder.decode(data);
     console.log(fileText);
   }
 });
