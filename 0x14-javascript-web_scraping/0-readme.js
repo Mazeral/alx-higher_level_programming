@@ -2,13 +2,12 @@
 
 const fs = require('fs');
 
-const path = process.argv[1]
-fs.readFile(path, 'utf8', (err, data) => {
+const filePath = process.argv[2];
+
+fs.readFile(filePath, 'utf8', (err, data) => {
   if (err) {
-    console.log(err);
+    console.error(err);
   } else {
-    const decoder = new TextDecoder('utf8');
-    const fileText = decoder.decode(data);
-    console.log(fileText);
+    console.log(data);
   }
 });
