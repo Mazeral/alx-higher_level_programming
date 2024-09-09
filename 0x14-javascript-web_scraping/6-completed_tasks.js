@@ -21,6 +21,5 @@ request(api_url, (error, response, body) => {
       tasksByUser[task.userId]++;
     }
   }
-	console.log(tasksByUser)
-
+  console.log(tasksByUser);
 });
