@@ -2,9 +2,9 @@
 
 const request = require('request');
 
-const api_url = process.argv[2];
+const apiUrl = process.argv[2];
 
-request(api_url, (error, response, body) => {
+request(apiUrl, (error, response, body) => {
   if (error) {
     console.error(error);
     return;
@@ -15,6 +15,7 @@ request(api_url, (error, response, body) => {
   const tasksByUser = {};
 
   for (const task of completedTasks) {
+    // looks like incrementing an element increment it's pair, not the key
     if (!tasksByUser[task.userId]) {
       tasksByUser[task.userId] = 1;
     } else {
